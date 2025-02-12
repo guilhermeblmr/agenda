@@ -2,6 +2,7 @@
 
 - Clone o repositório
 - Na pasta raiz do projeto, rode npm install
+- Copie .env.example para dentro de .env
 - Execute o comando docker-compose build
 - Execute o comando docker-compose up -d
 - Dentro do container app, execute php artisan migrate:fresh
