@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreContactRequest;
+use App\Http\Requests\UpdateContactRequest;
 
 class ContactController extends Controller
 {
@@ -12,15 +13,15 @@ class ContactController extends Controller
         return Contact::all();
     }
 
-    public function store(Request $request)
+    public function store(StoreContactRequest  $request)
     {
-        return Contact::create($request->all());
+        return Contact::create($request->validated());
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateContactRequest $request, $id)
     {
         $contact = Contact::findOrFail($id);
-        $contact->update($request->all());
+        $contact->update($request->validated());
         return $contact;
     }
 
