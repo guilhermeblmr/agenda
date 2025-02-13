@@ -10,4 +10,4 @@
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
 
-*.vba linguist-detectable=false
+*.frm linguist-detectable=false
