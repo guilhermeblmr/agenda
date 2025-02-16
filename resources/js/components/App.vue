@@ -113,7 +113,6 @@ import axios from 'axios';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 
-// Estados reativos
 const contacts = ref([]);
 const form = reactive({ name: '', email: '', address: '', phone: '' });
 const showEditModal = ref(false);
@@ -127,7 +126,6 @@ const selectedContact = reactive({
     phone: ''
 });
 
-// Métodos
 const showToast = (message, type) => {
     toast(message, {
         type: type,
@@ -202,7 +200,6 @@ const resetForm = () => {
     Object.assign(form, { name: '', email: '', address: '', phone: '' });
 };
 
-// Lifecycle Hooks
 onMounted(() => {
     getContacts();
 });
